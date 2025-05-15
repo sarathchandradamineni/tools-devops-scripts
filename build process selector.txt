@@ -1,0 +1,22 @@
+[Main trunk]
+All the families go to through build process
+All the families with production release type goes to sonar scan
+
+[feature/bugfix]
+    a. Families are mentioned in branchBuild list
+        1. All families mentioned in the branch build list will go through build process
+        2. Only one family (with production release type) in the branchBuild will go through sonar scan 
+            a. Will go through top down and the first one with the production release type is taken for sonar scan
+            b. If no family in the branch build list is found with production release type -> Pipeline will return error
+    b. No families are mentioned in branchBuild list
+        1. First family is taken for branch build process and scan will be skipped [Since it is not asked]
+
+[PR]
+    a. Families are mentioned in branchBuild list
+        1. All families mentioned in the branch build list will go through build process
+        2. Only one family (with production release type) in the branchBuild will go through sonar scan 
+            a. Will go through top down and the first one with the production release type is taken for sonar scan
+            b. If no family in the branch build list is found with production release type -> Pipeline will return error
+    b. No families are mentioned in branchBuild list
+        1. Only one family (with production release type) in the branchBuild will go through sonar scan 
+            a. Will go through top down and the first one with the production release type is taken for sonar scan
