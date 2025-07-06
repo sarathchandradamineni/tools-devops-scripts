@@ -6,6 +6,8 @@ declare -a branches
 repos=( "hp-hyd-config" "hp-ref-config" )
 branches=( "release-9" "release-12" "release-14" )
 
+mkdir -p ./external
+
 # Clone hyd config repo
 git clone https://sourcecode.socialcoding.bosch.com/scm/rhp/hp-hyd-config.git ./external/hp-hyd-config
 
